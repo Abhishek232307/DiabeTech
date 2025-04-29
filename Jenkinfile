@@ -16,19 +16,19 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                sh 'python3 -m unittest test_predict.py'
+                sh 'python3 -m unittest app.py'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t rainfall-predictor .'
+                sh 'docker build -t DiabetesPredictionSystem .'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 5000:5000 rainfall-predictor'
+                sh 'docker run -d -p 5000:5000 DiabetesPredictionSystem'
             }
         }
     }
