@@ -22,13 +22,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t DiabetesPredictionSystem .'
+                sh 'docker build -t diabetespredictionsystem .'
             }
         }
 
         stage('Run Container') {
             steps {
-                sh 'docker run -d -p 5000:5000 DiabetesPredictionSystem'
+                sh 'docker run -d -p 5000:5000 diabetespredictionsystem'
             }
         }
     }
