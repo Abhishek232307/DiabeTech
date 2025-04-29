@@ -12,7 +12,6 @@ import io
 import base64
 
 
-
 app = Flask(__name__)
 
 # Load the dataset
