@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <title>Diabetes Prediction - {{ algo_name }}</title>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ algo_name }} Prediction</h1>
+        <p>Please enter your details below:</p>
+        <form action="/predict/{{ algo }}" method="POST">
+            <div class="input-group">
+                <label for="glucose">Glucose level (mg/dL):</label>
+                <input type="number" id="glucose" name="glucose" placeholder="70-300" required>
+                <span class="tooltip">Glucose level indicates the amount of sugar in the blood. Normal levels are typically around 70-140 mg/dL.</span>
+            </div>
+            <div class="input-group">
+                <label for="blood_pressure">Blood Pressure (mmHg):</label>
+                <input type="number" id="blood_pressure" name="blood_pressure" placeholder="50-200" required>
+                <span class="tooltip">Blood pressure is the force of blood against artery walls. Normal resting blood pressure is around 120/80 mmHg.</span>
+            </div>
+            <div class="input-group">
+                <label for="skin_thickness">Skin Thickness (mm):</label>
+                <input type="number" id="skin_thickness" name="skin_thickness" placeholder="10-100" required>
+                <span class="tooltip">Skin thickness measures subcutaneous fat, often used to assess body fat levels.</span>
+            </div>
+            <div class="input-group">
+                <label for="insulin">Insulin level (IU/mL):</label>
+                <input type="number" id="insulin" name="insulin" placeholder="0-1000" required>
+                <span class="tooltip">Insulin is a hormone that regulates blood sugar levels. Normal fasting insulin is typically between 2-25 IU/mL.</span>
+            </div>
+            <div class="input-group">
+                <label for="bmi">BMI (kg/m²):</label>
+                <input type="number" id="bmi" name="bmi" placeholder="10-50" step="0.1" required>
+                <span class="tooltip">Body Mass Index (BMI) is a measure of body fat based on height and weight. A BMI between 18.5 and 24.9 is considered normal.</span>
+            </div>
+            <div class="input-group">
+                <label for="diabetes_pedigree_function">Diabetes Pedigree Function:</label>
+                <input type="number" id="diabetes_pedigree_function" name="diabetes_pedigree_function" placeholder="0-2" step="0.01" required>
+                <span class="tooltip">The Diabetes Pedigree Function indicates the likelihood of diabetes based on family history. Higher values suggest higher risk.</span>
+            </div>
+            <div class="input-group">
+                <label for="age">Age (years):</label>
+                <input type="number" id="age" name="age" placeholder="0-120" required>
+                <span class="tooltip">Age is an important factor in diabetes risk. Older adults are at higher risk for developing diabetes.</span>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>

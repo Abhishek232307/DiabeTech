@@ -1,0 +1,120 @@
+/* form.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('image.png');
+    background-size: 100%; /* This will cover the whole area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-color: #fdfdfd;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Change opacity as needed */
+    border-radius: 10px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+
+h1 {
+    color: #444;
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+p {
+    color: #666;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 95%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+/* Tooltip styling */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    top: -35px; /* Adjust as needed */
+    left: 0;
+    z-index: 10;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+/* Show the tooltip when hovering over the input field */
+.input-group:hover .tooltip {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
